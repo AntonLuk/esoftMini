@@ -23,9 +23,7 @@ function App() {
             <button onClick={() => setCount((count) => count + 1)}>
               Узнать
             </button>
-        </div>
-        <div className="card">
-            <h2>{!!count && count}</h2>
+             <h2>{!!count && count}</h2>
         </div>
     </>
   )

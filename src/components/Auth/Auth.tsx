@@ -90,7 +90,7 @@ class Auth extends React.Component<any, any> {
           </CardActionArea>
           <CardActions>
             <Button size="small" color="primary" onClick={() => setCount(count + 1)}>
-              Увеличить балл на 1
+              Увеличить баллы на 1
             </Button>
           </CardActions>
         </Card>

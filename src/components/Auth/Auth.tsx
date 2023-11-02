@@ -1,7 +1,17 @@
 import React from "react";
 import {inject} from "mobx-react";
-import {Box, Card, CardHeader} from '@mui/material'
-// import {WebAppUser} from '@twa-dev/types'
+import {
+  Box,
+  Button, ButtonGroup,
+  Card,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  CardHeader,
+  CardMedia,
+  Typography
+} from '@mui/material'
+import {WebAppUser} from '@twa-dev/types'
 import WebApp from "@twa-dev/sdk";
 
 @inject(({mainStore}: any) => {
@@ -11,27 +21,79 @@ import WebApp from "@twa-dev/sdk";
   }
 })
 
+
 class Auth extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
   }
 
   render() {
-    console.log(WebApp.initData)
+    // @ts-ignore
+    const {first_name = 'Test', last_name = 'Testovich'} = WebApp.initDataUnsafe;
     console.log(WebApp.initDataUnsafe)
     const {count, setCount} = this.props;
+
+
+    const buttons = [
+      <Button key="one">One</Button>,
+      <Button key="two">Two</Button>,
+      <Button key="three">Three</Button>,
+    ];
     // console.log(WebAppUser)
     return (
       <>
-        <Box>
-          <Card>
-            <CardHeader title={"Fio USer"} />
-          </Card>
-          <img src={'./public/logo.png'}/>
-          <h1>Внимание</h1>
-          <button onClick={() => setCount(count + 1)} />
-          {count}
-        </Box>
+        <Card sx={{ maxWidth: 345 }}>
+          <CardActionArea>
+            <CardMedia
+                component="img"
+                // height="140"
+                image="/public/logo.png"
+                alt="green iguana"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                {last_name} {first_name}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Баллы: {count}
+              </Typography>
+              <Box
+                  sx={{
+                    display: 'flex',
+                    '& > *': {
+                      m: 1,
+                    },
+                  }}
+              >
+                <ButtonGroup
+                    orientation="vertical"
+                    aria-label="vertical outlined button group"
+                >
+                  {buttons}
+                </ButtonGroup>
+                <ButtonGroup
+                    orientation="vertical"
+                    aria-label="vertical contained button group"
+                    variant="contained"
+                >
+                  {buttons}
+                </ButtonGroup>
+                <ButtonGroup
+                    orientation="vertical"
+                    aria-label="vertical contained button group"
+                    variant="text"
+                >
+                  {buttons}
+                </ButtonGroup>
+              </Box>
+            </CardContent>
+          </CardActionArea>
+          <CardActions>
+            <Button size="small" color="primary" onClick={() => setCount(count + 1)}>
+              Увеличить балл на 1
+            </Button>
+          </CardActions>
+        </Card>
       </>
     )
   }

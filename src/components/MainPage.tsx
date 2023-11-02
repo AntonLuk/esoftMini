@@ -5,7 +5,6 @@ import {Provider} from "mobx-react";
 const MainPage = () => {
   const mainStore = new MainStore();
 
-
   return (
     <>
       <Provider mainStore={mainStore}>

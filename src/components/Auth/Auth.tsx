@@ -2,12 +2,8 @@ import React from "react";
 import {inject} from "mobx-react";
 import {
   Box,
-  Button, ButtonGroup,
-  Card,
-  CardActionArea,
-  CardActions,
-  CardContent,
-  CardMedia,
+  Button,
+  ButtonGroup,
   Typography
 } from '@mui/material';
 import WebApp from "@twa-dev/sdk";

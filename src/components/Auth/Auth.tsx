@@ -23,7 +23,7 @@ class Auth extends React.Component<any, any> {
 
   render() {
     // @ts-ignore
-    const {user: {first_name = 'Тест', last_name = 'Тестович'}} = WebApp.initDataUnsafe;
+    const {user: {first_name = 'Тест', last_name = 'Тестович'} = {}} = WebApp.initDataUnsafe;
 
     const {count, setCount} = this.props;
 
@@ -46,6 +46,9 @@ class Auth extends React.Component<any, any> {
           </Typography>
           <Typography variant="body2" color="text.primari">
             Баллы: {count}
+          </Typography>
+          <Typography variant="caption" color="text.primari">
+            Это самый простой пример, сейчас здесь нет логики
           </Typography>
           <Box
               sx={{

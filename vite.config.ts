@@ -4,7 +4,18 @@ import basicSsl from '@vitejs/plugin-basic-ssl';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), basicSsl()],
+  plugins: [
+    react(
+      {
+        babel: {
+          parserOpts: {
+            plugins: [['decorators', {decoratorsBeforeExport: true}], 'decoratorAutoAccessors']
+          }
+        }
+      }
+    ),
+    basicSsl()
+  ],
   build: {
     outDir: './docs'
   },

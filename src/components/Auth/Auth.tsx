@@ -44,7 +44,7 @@ class Auth extends React.Component<any, any> {
           <CardActionArea>
             <CardMedia
                 component="img"
-                image="/public/logo.png"
+                image="/src/images/logo.png"
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">

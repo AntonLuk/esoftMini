@@ -7,11 +7,9 @@ import {
   CardActionArea,
   CardActions,
   CardContent,
-  CardHeader,
   CardMedia,
   Typography
-} from '@mui/material'
-import {WebAppUser} from '@twa-dev/types'
+} from '@mui/material';
 import WebApp from "@twa-dev/sdk";
 
 @inject(({mainStore}: any) => {

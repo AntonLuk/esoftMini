@@ -23,8 +23,8 @@ class Auth extends React.Component<any, any> {
 
   render() {
     // @ts-ignore
-    const {first_name = 'Test', last_name = 'Testovich'} = WebApp.initData;
-    console.log(WebApp.initDataUnsafe)
+    const {user: {first_name = 'Test', last_name = 'Testovich'}} = WebApp.initDataUnsafe;
+
     const {count, setCount} = this.props;
 
 

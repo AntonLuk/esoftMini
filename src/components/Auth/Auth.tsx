@@ -40,13 +40,11 @@ class Auth extends React.Component<any, any> {
     // console.log(WebAppUser)
     return (
       <>
-        <Card sx={{ maxWidth: 345 }}>
+        <Card>
           <CardActionArea>
             <CardMedia
                 component="img"
-                // height="140"
                 image="/public/logo.png"
-                alt="green iguana"
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">

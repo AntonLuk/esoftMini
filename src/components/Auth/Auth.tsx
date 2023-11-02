@@ -40,56 +40,50 @@ class Auth extends React.Component<any, any> {
     // console.log(WebAppUser)
     return (
       <>
-        <Card>
-          <CardActionArea>
-            <CardMedia
-                component="img"
-                image="/src/images/logo.png"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                {last_name} {first_name}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Баллы: {count}
-              </Typography>
-              <Box
-                  sx={{
-                    display: 'flex',
-                    '& > *': {
-                      m: 1,
-                    },
-                  }}
-              >
-                <ButtonGroup
-                    orientation="vertical"
-                    aria-label="vertical outlined button group"
-                >
-                  {buttons}
-                </ButtonGroup>
-                <ButtonGroup
-                    orientation="vertical"
-                    aria-label="vertical contained button group"
-                    variant="contained"
-                >
-                  {buttons}
-                </ButtonGroup>
-                <ButtonGroup
-                    orientation="vertical"
-                    aria-label="vertical contained button group"
-                    variant="text"
-                >
-                  {buttons}
-                </ButtonGroup>
-              </Box>
-            </CardContent>
-          </CardActionArea>
-          <CardActions>
-            <Button size="small" color="primary" onClick={() => setCount(count + 1)}>
-              Увеличить баллы на 1
-            </Button>
-          </CardActions>
-        </Card>
+        <Box>
+          <Box
+              component="img"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_6LG-9qlxTj_J9HSMVutBj5K60vyCA5yocQ&usqp=CAU"
+          />
+          <Typography gutterBottom variant="h5" component="div">
+            {last_name} {first_name}
+          </Typography>
+          <Typography variant="body2" color="text.primari">
+            Баллы: {count}
+          </Typography>
+          <Box
+              sx={{
+                display: 'flex',
+                '& > *': {
+                  m: 1,
+                },
+              }}
+          >
+            <ButtonGroup
+                orientation="vertical"
+                aria-label="vertical outlined button group"
+            >
+              {buttons}
+            </ButtonGroup>
+            <ButtonGroup
+                orientation="vertical"
+                aria-label="vertical contained button group"
+                variant="contained"
+            >
+              {buttons}
+            </ButtonGroup>
+            <ButtonGroup
+                orientation="vertical"
+                aria-label="vertical contained button group"
+                variant="text"
+            >
+              {buttons}
+            </ButtonGroup>
+          </Box>
+          <Button size="small" color="primary" onClick={setCount}>
+            Увеличить баллы на 1
+          </Button>
+        </Box>
       </>
     )
   }

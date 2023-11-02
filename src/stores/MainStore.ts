@@ -7,8 +7,8 @@ class MainStore {
     makeAutoObservable(this);
   }
 
-  @action setCount = (value: number) => {
-    this.count = value;
+  @action setCount = () => {
+    this.count = this.count + 1;
   }
 }
 
